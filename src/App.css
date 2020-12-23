@@ -1,0 +1,13 @@
+#qrcode {
+    display: none;
+}
+#qrcode.show {
+    display: block;
+}
+
+a {
+    display: none;
+}
+a.show {
+    display: inline;
+}
