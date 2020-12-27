@@ -16,7 +16,6 @@ class Input extends React.Component {
   handleSubmit(event) {
 
     const payload = {urlLong: this.state.value}
-    
 
     if(payload.urlLong && payload.urlLong.length > 0) {
 
@@ -29,7 +28,7 @@ class Input extends React.Component {
           if(res.data) {
             // yes there is
 
-            if(res.data.error) {
+            if(res.data.error && res.data.error.length > 0) {
               // whoops there is an error
 
               // tell the user what it is
@@ -37,16 +36,15 @@ class Input extends React.Component {
             } else {
 
               // there we go. Everything's fine
-              console.log(res.data);
+              // console.log(res.data);
 
               document.getElementById('result').value = res.data.urlShortFull;
 
               document.getElementById('resultlink').href = res.data.urlShortFull;
-              document.getElementById('resultlink').classList.add('show');
               
               document.getElementById('qrcode').src = res.data.urlQrCode;
-              document.getElementById('qrcode').classList.add('show');
 
+              document.getElementById('results').classList.add('show');
               
             }
 
@@ -67,10 +65,8 @@ class Input extends React.Component {
   render() {
     return (
       <form onSubmit={this.handleSubmit}>
-        <label>
-          URL: <input type="text" value={this.state.value} onChange={this.handleChange} />
-        </label>
-        <input type="submit" value="Submit" />
+        <input type="text" value={this.state.value} onChange={this.handleChange} />
+        <input type="submit" value="Shorten" />
       </form>
     );
   }
