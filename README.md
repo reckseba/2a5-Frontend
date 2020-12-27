@@ -9,10 +9,12 @@ npm run start
 ## Run prod env
 node server.js
 
-opens a server on port 8000. If you want to make your serveice available on port 443 to make it more convenient you need to redirect everything on port 8000 to port 443:
-iptables -t nat -A PREROUTING -p tcp --dport 80 -j REDIRECT --to-port 8000 (as root)
-iptables -t nat --line-numbers -n -L (to list what you have done)
+opens a server on port 8000.  
 
-forever start server.js
-
+If you want to publish your serveice on port 443 to make it more convenient you need to redirect everything on port 8000 to port 443:  
+iptables -t nat -A PREROUTING -p tcp --dport 80 -j REDIRECT --to-port 8000 (as root)  
+iptables -t nat --line-numbers -n -L (to list what you have done)  
+  
+forever start server.js  
+  
 npm run build  
