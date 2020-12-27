@@ -22,7 +22,7 @@ module.exports = function(app) {
     app.use(
         '/newUrlLong',
         createProxyMiddleware({
-            target: 'http://localhost:5000',
+            target: 'https://2a5.de:5000',
             changeOrigin: true
         })
     );
@@ -30,7 +30,7 @@ module.exports = function(app) {
     app.use(
         '/*',
         createProxyMiddleware(filter, {
-            target: 'http://localhost:5000',
+            target: 'https://2a5.de:5000',
             changeOrigin: true
         })
     );

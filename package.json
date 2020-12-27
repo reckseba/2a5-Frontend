@@ -7,6 +7,7 @@
     "@testing-library/react": "^11.2.2",
     "@testing-library/user-event": "^12.6.0",
     "axios": "^0.21.1",
+    "forever": "^3.0.4",
     "http-proxy-middleware": "^1.0.6",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
@@ -14,7 +15,7 @@
     "web-vitals": "^0.2.4"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "HTTPS=true PORT=443 SSL_CRT_FILE=/etc/letsencrypt/live/2a5.de/cert.pem SSL_KEY_FILE=/etc/letsencrypt/live/2a5.de/privkey.pem react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
