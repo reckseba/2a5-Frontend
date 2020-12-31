@@ -27,7 +27,6 @@ app.use (function (req, res, next) {
 			next();
 	} else {
 			// request was via http, so redirect to https
-			console.log("Redirect the visitor.");
 			res.redirect('https://' + req.headers.host + req.url);
 	}
 });
@@ -66,4 +65,10 @@ httpsServer.listen(8000, () => {
 	console.log(`HTTPS Prod-Server running on port 8000`);
 });
 
+
+const httpServer = http.createServer(app);
+
+httpServer.listen(8001, () => {
+	console.log(`HTTP Prod-Server running on port 8001`);
+});
 
