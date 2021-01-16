@@ -29,7 +29,7 @@ app.use (function (req, res, next) {
 			
 			res.setHeader(
 				'Content-Security-Policy-Report-Only',
-				"default-src 'self' https://2a5.de; font-src 'self' https://2a5.de; img-src 'self' https://2a5.de; script-src 'self' https://2a5.de; style-src 'self' https://2a5.de; frame-src 'self'"
+				"default-src 'self'; font-src 'self'; img-src 'self'; script-src 'self' 'sha256-AAoB7NZRA776ALHTNBNJ0JbtXU4iafu0oepkvAsAGCE='; style-src 'self'; frame-src 'self'"
 			);
 			
 			next();
