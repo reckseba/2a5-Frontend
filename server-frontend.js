@@ -19,10 +19,9 @@ const credentials = {
 	ca: ca
 };
 
-
-app.use(hsts({
-	maxAge: 15552000  // 180 days in seconds
-}));
+const hstsMiddleware = hsts({
+	maxAge: 1234000
+});
 
 // Add a handler to inspect the req.secure flag (see 
 // http://expressjs.com/api#req.secure). This allows us 
@@ -32,6 +31,7 @@ app.use (function (req, res, next) {
 			// request was via https, so do no special handling
 
 			// set csp
+			hstsMiddleware(req, res, next);
 			
 			res.setHeader(
 				'Content-Security-Policy',
