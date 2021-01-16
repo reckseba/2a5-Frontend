@@ -28,7 +28,7 @@ app.use (function (req, res, next) {
 			// set csp
 			res.setHeader(
 				'Content-Security-Policy',
-				"default-src 'self'; font-src 'self'; img-src 'self'; script-src 'self'; style-src 'self'; frame-src 'self'"
+				"default-src 'self' https://2a5.de; font-src 'self' https://2a5.de; img-src 'self' https://2a5.de; script-src 'self' https://2a5.de; style-src 'self' https://2a5.de; frame-src 'self'"
 			);
 			
 			next();
