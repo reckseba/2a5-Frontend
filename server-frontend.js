@@ -35,7 +35,7 @@ app.use (function (req, res, next) {
 			
 			res.setHeader(
 				'Content-Security-Policy',
-				"default-src 'self'; font-src 'self'; img-src 'self'; script-src 'self' 'sha256-AAoB7NZRA776ALHTNBNJ0JbtXU4iafu0oepkvAsAGCE='; style-src 'self'; frame-src 'self'"
+				"default-src 'self'; font-src 'self'; img-src 'self' data:; script-src 'self' 'sha256-AAoB7NZRA776ALHTNBNJ0JbtXU4iafu0oepkvAsAGCE='; style-src 'self'; frame-src 'self'"
 			);
 			
 			next();
