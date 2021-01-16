@@ -22,7 +22,7 @@ const credentials = {
 
 app.use(hsts({
 	maxAge: 15552000  // 180 days in seconds
-}))
+}));
 
 // Add a handler to inspect the req.secure flag (see 
 // http://expressjs.com/api#req.secure). This allows us 
