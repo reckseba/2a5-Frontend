@@ -4,6 +4,7 @@ const http = require('http');
 const https = require('https');
 const fs = require('fs');
 const { createProxyMiddleware } = require('http-proxy-middleware');
+const hsts = require('hsts')
 
 const app = express();
 
@@ -17,6 +18,11 @@ const credentials = {
 	cert: certificate,
 	ca: ca
 };
+
+
+app.use(hsts({
+	maxAge: 15552000  // 180 days in seconds
+}))
 
 // Add a handler to inspect the req.secure flag (see 
 // http://expressjs.com/api#req.secure). This allows us 
