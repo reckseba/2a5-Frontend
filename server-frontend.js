@@ -4,7 +4,7 @@ const http = require('http');
 const https = require('https');
 const fs = require('fs');
 const { createProxyMiddleware } = require('http-proxy-middleware');
-const hsts = require('hsts')
+const hsts = require('hsts');
 
 const app = express();
 
