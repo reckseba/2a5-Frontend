@@ -31,7 +31,7 @@ app.use (function (req, res, next) {
 			// request was via https, so do no special handling
 
 			// set csp
-			hstsMiddleware(req, res, next);
+			// hstsMiddleware(req, res, next);
 			
 			res.setHeader(
 				'Content-Security-Policy',
