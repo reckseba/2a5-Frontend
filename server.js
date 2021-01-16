@@ -24,6 +24,13 @@ const credentials = {
 app.use (function (req, res, next) {
 	if (req.secure) {
 			// request was via https, so do no special handling
+
+			// set csp
+			res.setHeader(
+				'Content-Security-Policy',
+				"default-src 'self'; font-src 'self'; img-src 'self'; script-src 'self'; style-src 'self'; frame-src 'self'"
+			);
+			
 			next();
 	} else {
 			// request was via http, so redirect to https
