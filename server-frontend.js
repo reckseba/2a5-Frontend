@@ -26,12 +26,12 @@ app.use (function (req, res, next) {
 			// request was via https, so do no special handling
 
 			// set csp
-			/*
+			
 			res.setHeader(
-				'Content-Security-Policy',
+				'Content-Security-Policy-Report-Only',
 				"default-src 'self' https://2a5.de; font-src 'self' https://2a5.de; img-src 'self' https://2a5.de; script-src 'self' https://2a5.de; style-src 'self' https://2a5.de; frame-src 'self'"
 			);
-			*/
+			
 			next();
 	} else {
 			// request was via http, so redirect to https
