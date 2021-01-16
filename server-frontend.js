@@ -4,7 +4,7 @@ const http = require('http');
 const https = require('https');
 const fs = require('fs');
 const { createProxyMiddleware } = require('http-proxy-middleware');
-const hsts = require('hsts');
+const hsts = require('helmet');
 
 const app = express();
 
@@ -19,9 +19,7 @@ const credentials = {
 	ca: ca
 };
 
-const hstsMiddleware = hsts({
-	maxAge: 1234000
-});
+app.use(helmet());
 
 // Add a handler to inspect the req.secure flag (see 
 // http://expressjs.com/api#req.secure). This allows us 
@@ -29,9 +27,6 @@ const hstsMiddleware = hsts({
 app.use (function (req, res, next) {
 	if (req.secure) {
 			// request was via https, so do no special handling
-
-			// set csp
-			// hstsMiddleware(req, res, next);
 			
 			res.setHeader(
 				'Content-Security-Policy',
